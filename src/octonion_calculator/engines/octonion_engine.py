@@ -54,12 +54,12 @@ class OctonionEngine(BaseEngine[Octonion]):
         vector_part = x_0 * img_y + y_0 * img_x + cross_part
         return Octonion(np.concatenate(([real_part], vector_part)))
     
-    def _octonion_cross_product(self, img_x: Octonion, img_y: Octonion) -> np.ndarray:
+    def _octonion_cross_product(self, img_x: np.ndarray, img_y: np.ndarray) -> np.ndarray:
         """
-        Compute the octonion cross product.
+        Compute the octonion imaginary part cross product.
         
-        :param a: First octonion.
-        :param b: Second octonion.
+        :param a: First octonion imaginary part.
+        :param b: Second octonion imaginary part.
         :return: Resulting vector from the cross product.
         """
         fano_triples = [
