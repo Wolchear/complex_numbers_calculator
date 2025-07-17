@@ -26,3 +26,13 @@ class OctonionEngine(BaseEngine[Octonion]):
         :return: Resulting octonion after addition.
         """
         return Octonion(a.components + b.components)
+    
+    def subtract(self, a: Octonion, b: Octonion) -> Octonion:
+        """
+        Subtract two octonions.
+        
+        :param a: First octonion.
+        :param b: Second octonion.
+        :return: Resulting octonion after subtraction.
+        """
+        return Octonion(a.components - b.components)

@@ -26,3 +26,11 @@ class BaseEngine(ABC, Generic[T]):
         Add two octonions
         """
         pass
+    
+    @abstractmethod
+    def subtract(self, a: T, b: T) -> T:
+        """
+        Subtract two octonions
+        """
+        pass
+    
