@@ -34,3 +34,9 @@ class BaseEngine(ABC, Generic[T]):
         """
         pass
     
+    @abstractmethod
+    def multiply(self, a: T, b: T) -> T:
+        """
+        Multiply two octonions
+        """
+        pass

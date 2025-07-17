@@ -15,6 +15,12 @@ def one_octonion():
     return Octonion(sequence)
 
 @pytest.fixture
+def inc_octonion():
+    """Fixture for an increment octonion."""
+    sequence = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0]
+    return Octonion(sequence)
+
+@pytest.fixture
 def octonion_calculator():
     """Fixture for the octonion calculator."""
     return Calculator(engine_name='octonion')
