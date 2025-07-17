@@ -35,3 +35,13 @@ class Calculator(Generic[T]):
         :return: Resulting octonion after addition.
         """
         return self.engine.add(a, b)
+    
+    def subtract(self, a: T, b: T) -> T:
+        """
+        Subtract two complex numbers using the engine.
+        
+        :param a: First complex number.
+        :param b: Second complex number.
+        :return: Resulting octonion after subtraction.
+        """
+        return self.engine.subtract(a, b)
