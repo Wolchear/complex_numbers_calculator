@@ -1,2 +1,2 @@
 [MESSAGES CONTROL]
-disable = C0114, R0903  # missing-module-docstring
+disable = C0114, R0903, W0107,  trailing-whitespace  # missing-module-docstring
