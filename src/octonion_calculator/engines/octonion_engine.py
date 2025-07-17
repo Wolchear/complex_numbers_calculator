@@ -25,4 +25,4 @@ class OctonionEngine(BaseEngine[Octonion]):
         :param b: Second octonion.
         :return: Resulting octonion after addition.
         """
-        return a + b
+        return Octonion(a.components + b.components)
