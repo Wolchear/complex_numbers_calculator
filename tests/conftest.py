@@ -1,5 +1,5 @@
 import pytest
-from octonion_calculator.octonion import Octonion
+from octonion_calculator.models.octonion import Octonion
 
 
 @pytest.fixture
