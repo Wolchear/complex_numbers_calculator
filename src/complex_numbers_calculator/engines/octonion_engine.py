@@ -1,9 +1,9 @@
 import numpy as np
 
-from .base_engine import BaseEngine
+from .complex_number_engine import CompexNumberEngine
 from ..models.octonion import Octonion
 
-class OctonionEngine(BaseEngine[Octonion]):
+class OctonionEngine(CompexNumberEngine[Octonion]):
     """
     Engine for performing operations on octonions.
     """
@@ -18,26 +18,6 @@ class OctonionEngine(BaseEngine[Octonion]):
         String representation of the octonion engine.
         """
         return "OctonionEngine()"
-
-    def add(self, a: Octonion, b: Octonion) -> Octonion:
-        """
-        Add two octonions.
-        
-        :param a: First octonion.
-        :param b: Second octonion.
-        :return: Resulting octonion after addition.
-        """
-        return Octonion(a.components + b.components)
-    
-    def subtract(self, a: Octonion, b: Octonion) -> Octonion:
-        """
-        Subtract two octonions.
-        
-        :param a: First octonion.
-        :param b: Second octonion.
-        :return: Resulting octonion after subtraction.
-        """
-        return Octonion(a.components - b.components)
     
     def multiply(self, a: Octonion, b: Octonion) -> Octonion:
         """
@@ -76,17 +56,6 @@ class OctonionEngine(BaseEngine[Octonion]):
             cross_vector[k] +=  img_x[i] * img_y[j]  
             cross_vector[k] -=  img_x[j] * img_y[i] 
         return cross_vector
-    
-    def conjugate(self, a: Octonion) -> Octonion:
-        """Calculate the conjugate of the octonion."""
-        return np.concatenate([a.components[0:1], -a.components[1:]])
-
-    def inverse(self, a: Octonion) -> Octonion:
-        """Calculate the inverse of the octonion."""
-        norm_squared = a.norm ** 2
-        if norm_squared == 0:
-            raise ValueError("Cannot compute inverse of zero octonion.")
-        return Octonion(self.conjugate(a) / norm_squared)
     
     def division(self, a: Octonion, b: Octonion) -> Octonion:
         """

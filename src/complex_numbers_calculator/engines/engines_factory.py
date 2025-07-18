@@ -1,11 +1,12 @@
 from .octonion_engine import OctonionEngine
-from .base_engine import BaseEngine
+from .complex_number_engine import CompexNumberEngine
 
 engines = {
     'octonion': OctonionEngine,
+    'complex_number': CompexNumberEngine
 }
 
-def get_engine(engine_name: str) -> BaseEngine:
+def get_engine(engine_name: str) -> CompexNumberEngine:
     """
     Factory function to get the engine.
     

@@ -65,3 +65,18 @@ class Calculator(Generic[T]):
         :return: Resulting octonion after division.
         """
         return self.engine.division(a, b)
+    
+    def conjugate(self, a: T) -> T:
+        """
+        Calculate the conjugate of a complex number using the engine.
+        """
+        return self.engine.conjugate(a)
+    
+    def inverse(self, a: T) -> T:
+        """
+        Calculate the inverse of a complex number using the engine.
+        
+        :param a: Complex number to invert.
+        :return: Inverse of the complex number.
+        """
+        return self.engine.inverse(a)

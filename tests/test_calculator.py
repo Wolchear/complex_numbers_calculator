@@ -29,3 +29,20 @@ def test_division_by_zero(octonion_calculator, norm_octonion, zero_octonion):
     with pytest.raises(ValueError) as excinfo:
         octonion_calculator.division(norm_octonion, zero_octonion)
     assert "Cannot compute inverse of zero octonion." in str(excinfo.value)
+    
+    
+def test_conjugate(octonion_calculator, complex_number):
+    """Test the conjugate of a complex number."""
+    conjugate_result = octonion_calculator.conjugate(complex_number)
+    assert repr(conjugate_result) == "ComplexNumber(1.00, 3.00)"
+    
+def test_inverse(octonion_calculator, complex_number):
+    """Test the inverse of a complex number."""
+    inverse_result = octonion_calculator.inverse(complex_number)
+    assert repr(inverse_result) == "ComplexNumber(0.10, 0.30)"
+    
+
+def test_complex_multiply(complex_number_calculator, complex_number, complex_number_second):
+    """Test the multiplication of two complex numbers."""
+    product_result = complex_number_calculator.multiply(complex_number, complex_number_second)
+    assert repr(product_result) == "ComplexNumber(17.00, -1.00)"
