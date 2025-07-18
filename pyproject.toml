@@ -3,9 +3,9 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "octonion_calculator"
+name = "complex_numbers_calculator"
 version = "0.0.1"
-description = "Octonion arithmetic library"
+description = "Complex numbers arithmetic library"
 readme = "README.md"
 license = { file = "LICENSE" }
 authors = [
@@ -19,7 +19,7 @@ dependencies = [
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["octonion_calculator*"]
+include = ["complex_numbers_calculator*"]
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]

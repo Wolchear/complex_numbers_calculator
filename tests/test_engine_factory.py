@@ -1,6 +1,6 @@
 import pytest
 
-from octonion_calculator.engines import get_engine
+from complex_numbers_calculator.engines import get_engine
 
 def test_engine_factory():
     """Test the engine factory creation."""

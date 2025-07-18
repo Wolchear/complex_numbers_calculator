@@ -1,6 +1,6 @@
 import pytest
-from octonion_calculator.models.octonion import Octonion
-from octonion_calculator import Calculator
+from complex_numbers_calculator.models.octonion import Octonion
+from complex_numbers_calculator import Calculator
 
 @pytest.fixture
 def zero_octonion():
