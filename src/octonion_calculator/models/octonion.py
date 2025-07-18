@@ -12,3 +12,9 @@ class Octonion:
     def __repr__(self):
         """Return a string representation of the octonion."""
         return f"Octonion({', '.join(f'{c:.2f}' for c in self.components)})"
+
+    @property
+    def norm(self) -> float:
+        """Calculate the norm of the octonion."""
+        return np.linalg.norm(self.components)
+    

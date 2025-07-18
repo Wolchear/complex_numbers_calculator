@@ -24,3 +24,9 @@ def inc_octonion():
 def octonion_calculator():
     """Fixture for the octonion calculator."""
     return Calculator(engine_name='octonion')
+
+@pytest.fixture
+def norm_octonion():
+    """Fixture for a normalized octonion."""
+    sequence = [1.0, 2.0, 3.0, 4.0, 4.0, 3.0, 2.0, 1.0]
+    return Octonion(sequence)

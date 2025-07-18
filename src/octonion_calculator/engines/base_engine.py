@@ -40,3 +40,10 @@ class BaseEngine(ABC, Generic[T]):
         Multiply two octonions
         """
         pass
+    
+    @abstractmethod
+    def division(self, a: T, b: T) -> T:
+        """
+        Divide two octonions
+        """
+        pass
