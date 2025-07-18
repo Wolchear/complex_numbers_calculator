@@ -27,7 +27,7 @@ jobs:
 
       - name: Run Pylint
         run: |
-          pylint src/octonion_calculator
+          pylint src/complex_numbers_calculator
 
   test:
     name: Test
