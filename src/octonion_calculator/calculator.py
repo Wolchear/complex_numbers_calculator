@@ -55,3 +55,13 @@ class Calculator(Generic[T]):
         :return: Resulting octonion after multiplication.
         """
         return self.engine.multiply(a, b)
+
+    def division(self, a: T, b: T) -> T:
+        """
+        Divide two complex numbers using the engine.
+        
+        :param a: First complex number.
+        :param b: Second complex number.
+        :return: Resulting octonion after division.
+        """
+        return self.engine.division(a, b)

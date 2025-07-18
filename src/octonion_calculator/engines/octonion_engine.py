@@ -48,8 +48,8 @@ class OctonionEngine(BaseEngine[Octonion]):
         :return: Resulting octonion after multiplication.
         """
         real_part = a.components[0] * b.components[0] - np.sum(a.components[1:] * b.components[1:])
-        x_0, img_x = a.components[0], b.components[1:]
-        y_0, img_y = b.components[0], a.components[1:]
+        x_0, img_x = a.components[0], a.components[1:]
+        y_0, img_y = b.components[0], b.components[1:]
         cross_part = self._octonion_cross_product(img_x, img_y)
         vector_part = x_0 * img_y + y_0 * img_x + cross_part
         return Octonion(np.concatenate(([real_part], vector_part)))
@@ -76,3 +76,24 @@ class OctonionEngine(BaseEngine[Octonion]):
             cross_vector[k] +=  img_x[i] * img_y[j]  
             cross_vector[k] -=  img_x[j] * img_y[i] 
         return cross_vector
+    
+    def conjugate(self, a: Octonion) -> Octonion:
+        """Calculate the conjugate of the octonion."""
+        return np.concatenate([a.components[0:1], -a.components[1:]])
+
+    def inverse(self, a: Octonion) -> Octonion:
+        """Calculate the inverse of the octonion."""
+        norm_squared = a.norm ** 2
+        if norm_squared == 0:
+            raise ValueError("Cannot compute inverse of zero octonion.")
+        return Octonion(self.conjugate(a) / norm_squared)
+    
+    def division(self, a: Octonion, b: Octonion) -> Octonion:
+        """
+        Divide two octonions.
+        
+        :param a: Numerator octonion.
+        :param b: Denominator octonion.
+        :return: Resulting octonion after division.
+        """
+        return self.multiply(a, self.inverse(b))
