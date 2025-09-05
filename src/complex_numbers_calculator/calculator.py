@@ -64,6 +64,8 @@ class Calculator(Generic[T]):
         :param b: Second complex number.
         :return: Resulting octonion after division.
         """
+        if b.norm == 0:
+            raise ZeroDivisionError("Could not compute division by zero")
         return self.engine.division(a, b)
     
     def conjugate(self, a: T) -> T:

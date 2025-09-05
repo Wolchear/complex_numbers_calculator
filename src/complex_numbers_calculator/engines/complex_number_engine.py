@@ -36,7 +36,7 @@ class CompexNumberEngine(Generic[T]):
         """Calculate the inverse of the complex number."""
         norm_squared = a.norm ** 2
         if norm_squared == 0:
-            raise ValueError("Cannot compute inverse of zero octonion.")
+            raise ValueError("Cannot compute inverse of zero complex number.")
         conj_a = self.conjugate(a)
         return type(a)(conj_a.components / norm_squared)
     

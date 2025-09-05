@@ -43,18 +43,19 @@ class OctonionEngine(CompexNumberEngine[Octonion]):
         :return: Resulting vector from the cross product.
         """
         fano_triples = [
-            (0, 1, 3),
-            (1, 2, 4),
-            (2, 3, 5),
-            (3, 4, 6),
-            (4, 5, 0),
-            (5, 6, 1),
-            (6, 0, 2), 
+            (0, 1, 2),
+            (0, 3, 4),
+            (0, 6, 5),
+            (1, 3, 5),
+            (1, 4, 6),
+            (2, 3, 6),
+            (2, 5, 4),
         ]
         cross_vector = np.zeros(7, dtype=img_x.dtype)
         for i, j, k in fano_triples:
-            cross_vector[k] +=  img_x[i] * img_y[j]  
-            cross_vector[k] -=  img_x[j] * img_y[i] 
+            cross_vector[k] += img_x[i] * img_y[j] - img_x[j] * img_y[i]
+            cross_vector[i] += img_x[j] * img_y[k] - img_x[k] * img_y[j]
+            cross_vector[j] += img_x[k] * img_y[i] - img_x[i] * img_y[k] 
         return cross_vector
     
     def division(self, a: Octonion, b: Octonion) -> Octonion:
