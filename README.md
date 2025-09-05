@@ -1,4 +1,4 @@
-# Octonion-calculator
+# Complex Numbers Calculator
 
 ## Table of Contents
 - [Intoduction](#intoduction)  
@@ -50,7 +50,7 @@ print(result)
 ```
 ### Engines
 
-The calculator is built around an engine system.
+The calculator is built using an engine system.
 To choose the working mode — complex numbers or octonions.
 You HAVE TO select the corresponding engine:
 - complex_number
@@ -99,7 +99,7 @@ For program testing I was using **pytest**. If you want to run test by yourself 
 cd tests
 pytest
 ```
-You also can use **pytest** with **-v** flag if you want to get more info abaout runnig tests.
+You also can use **pytest** with **-v** flag if you want to get more info about runnig tests.
 
 ## Citation
 
